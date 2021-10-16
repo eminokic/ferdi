@@ -458,8 +458,8 @@ app.on('ready', () => {
 
   // Register App URL
   const protocolClient = isDevMode ? 'ferdi-dev' : 'ferdi';
-  if (!app.isDefaultProtocolClient(protocolClient)) {
-    app.setAsDefaultProtocolClient(protocolClient);
+  if (!app.isDefaultProtocolClient(protocolClient, process.execPath)) {
+    app.setAsDefaultProtocolClient(protocolClient, process.execPath);
   }
 
   if (isWindows) {
@@ -509,7 +509,7 @@ app.on('login', (event, _webContents, _request, authInfo, callback) => {
 
   if (!authInfo.isProxy && authInfo.scheme === 'basic') {
     debug('basic auth handler', authInfo);
-    basicAuthHandler(mainWindow, authInfo);
+    basicAuthHandler(mainWindow!, authInfo);
   }
 });
 

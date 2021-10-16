@@ -297,7 +297,9 @@ class EditSettingsScreen extends Component {
         scheduledDNDStart: settingsData.scheduledDNDStart,
         scheduledDNDEnd: settingsData.scheduledDNDEnd,
         enableGPUAcceleration: Boolean(settingsData.enableGPUAcceleration),
-        enableGlobalHideShortcut: Boolean(settingsData.enableGlobalHideShortcut),
+        enableGlobalHideShortcut: Boolean(
+          settingsData.enableGlobalHideShortcut,
+        ),
         showDisabledServices: Boolean(settingsData.showDisabledServices),
         darkMode: Boolean(settingsData.darkMode),
         adaptableDarkMode: Boolean(settingsData.adaptableDarkMode),
@@ -305,7 +307,9 @@ class EditSettingsScreen extends Component {
         splitMode: Boolean(settingsData.splitMode),
         serviceRibbonWidth: Number(settingsData.serviceRibbonWidth),
         iconSize: Number(settingsData.iconSize),
-        enableLongPressServiceHint: Boolean(settingsData.enableLongPressServiceHint),
+        enableLongPressServiceHint: Boolean(
+          settingsData.enableLongPressServiceHint,
+        ),
         useVerticalStyle: Boolean(settingsData.useVerticalStyle),
         alwaysShowWorkspaces: Boolean(settingsData.alwaysShowWorkspaces),
         accentColor: settingsData.accentColor,
@@ -513,7 +517,7 @@ class EditSettingsScreen extends Component {
         lockingFeatureEnabled: {
           label: intl.formatMessage(messages.enableLock),
           value: settings.all.app.lockingFeatureEnabled || false,
-          default: false,
+          default: DEFAULT_APP_SETTINGS.lockingFeatureEnabled,
         },
         lockedPassword: {
           label: intl.formatMessage(messages.lockPassword),
@@ -535,7 +539,7 @@ class EditSettingsScreen extends Component {
         scheduledDNDEnabled: {
           label: intl.formatMessage(messages.scheduledDNDEnabled),
           value: settings.all.app.scheduledDNDEnabled || false,
-          default: false,
+          default: DEFAULT_APP_SETTINGS.scheduledDNDEnabled,
         },
         scheduledDNDStart: {
           label: intl.formatMessage(messages.scheduledDNDStart),

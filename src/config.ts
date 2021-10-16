@@ -2,7 +2,7 @@
 
 import ms from 'ms';
 
-import { DEFAULT_ACCENT_COLOR } from '@meetfranz/theme';
+export const DEFAULT_ACCENT_COLOR = '#7266F0';
 
 export const CHECK_INTERVAL = ms('1h'); // How often should we perform checks
 
@@ -235,4 +235,27 @@ export const DEFAULT_APP_SETTINGS = {
   alwaysShowWorkspaces: false,
   liftSingleInstanceLock: false,
   enableLongPressServiceHint: false,
+  proxyFeatureEnabled: false,
+  onlyShowFavoritesInUnreadCount: false
+};
+
+export const DEFAULT_SERVICE_SETTINGS = {
+  isEnabled: true,
+  isHibernationEnabled: false,
+  isWakeUpEnabled: true,
+  isNotificationEnabled: true,
+  isBadgeEnabled: true,
+  isMuted: false,
+  customIcon: false,
+  isDarkModeEnabled: false,
+  // Note: Do NOT change these default values. If they change, then the corresponding changes in the recipes needs to be done
+  hasDirectMessages: true,
+  hasIndirectMessages: false,
+  hasNotificationSound: false,
+  hasTeamId: false,
+  hasCustomUrl: false,
+  hasHostedOption: false,
+  allowFavoritesDelineationInUnreadCount: false,
+  disablewebsecurity: false,
+  autoHibernate: false,
 };
