@@ -191,6 +191,10 @@ const createWindow = () => {
     posY = DEFAULT_WINDOW_OPTIONS.y;
   }
 
+  // Instantiating the app logo and it's proper path as a string.
+  // Since it is a static image, it would be correct to implement it into a static folder, though assets is essentially equivalent.
+  const appLogo = 'assets/ferdi-core-logo_16x.png'
+
   // Create the browser window.
   const backgroundColor = retrieveSettingValue('darkMode', false)
     ? '#1E1E1E'
