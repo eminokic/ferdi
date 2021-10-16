@@ -209,6 +209,9 @@ const createWindow = () => {
     minHeight: 500,
     show: false,
     titleBarStyle: isMac ? 'hidden' : 'default',
+    // Adding the icon image in the browser window as found on the i3 discussion. 
+    // Reference: https://github.com/i3/i3/pull/4439/files#diff-fda32749053739202f20c8b223315aba489c8d8f5b7ef99960f6791263accf30R488
+    icon: path.resolve(__dirname, appLogo),
     frame: isLinux,
     backgroundColor,
     webPreferences: {
