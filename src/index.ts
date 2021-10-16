@@ -44,6 +44,9 @@ import { asarPath } from './helpers/asar-helpers';
 import { openExternalUrl } from './helpers/url-helpers';
 import userAgent from './helpers/userAgent-helpers';
 
+// Adding Path Library for Icon Loading
+import * as path from 'path'
+
 const debug = require('debug')('Ferdi:App');
 
 // Globally set useragent to fix user agent override in service workers
