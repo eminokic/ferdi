@@ -70,3 +70,4 @@ protocols:
 asarUnpack:
   - ./recipes
   - ./assets/images/taskbar
+  - ./assets/images/window-manager

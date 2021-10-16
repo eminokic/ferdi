@@ -44,9 +44,6 @@ import { asarPath } from './helpers/asar-helpers';
 import { openExternalUrl } from './helpers/url-helpers';
 import userAgent from './helpers/userAgent-helpers';
 
-// Adding Path Library for Icon Loading
-import * as path from 'path'
-
 const debug = require('debug')('Ferdi:App');
 
 // Globally set useragent to fix user agent override in service workers
@@ -173,6 +170,8 @@ app.setAboutPanelOptions({
   version: '',
 });
 
+const getImagePath = (image: string) => asarPath(join(isDevMode ? `${__dirname}../src/` : __dirname, image));
+
 const createWindow = () => {
   // Remember window size
   const mainWindowState = windowStateKeeper({
@@ -191,9 +190,7 @@ const createWindow = () => {
     posY = DEFAULT_WINDOW_OPTIONS.y;
   }
 
-  // Instantiating the app logo and it's proper path as a string.
-  // Since it is a static image, it would be correct to implement it into a static folder, though assets is essentially equivalent.
-  const appLogo = 'assets/ferdi-core-logo_16x.png'
+  const appLogo = getImagePath('assets/images/window-manager/ferdi-core-logo_16x.png');
 
   // Create the browser window.
   const backgroundColor = retrieveSettingValue('darkMode', false)
@@ -209,9 +206,7 @@ const createWindow = () => {
     minHeight: 500,
     show: false,
     titleBarStyle: isMac ? 'hidden' : 'default',
-    // Adding the icon image in the browser window as found on the i3 discussion. 
-    // Reference: https://github.com/i3/i3/pull/4439/files#diff-fda32749053739202f20c8b223315aba489c8d8f5b7ef99960f6791263accf30R488
-    icon: path.resolve(__dirname, appLogo),
+    icon: appLogo,
     frame: isLinux,
     backgroundColor,
     webPreferences: {
@@ -464,12 +459,7 @@ app.on('ready', () => {
 
   if (isWindows) {
     const extraArgs = isDevMode ? `${__dirname} ` : '';
-    const iconPath = asarPath(
-      join(
-        isDevMode ? `${__dirname}../src/` : __dirname,
-        'assets/images/taskbar/win32/display.ico',
-      ),
-    );
+    const iconPath = getImagePath('assets/images/taskbar/win32/display.ico');
     app.setUserTasks([
       {
         program: process.execPath,
