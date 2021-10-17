@@ -44,6 +44,8 @@ import { asarPath } from './helpers/asar-helpers';
 import { openExternalUrl } from './helpers/url-helpers';
 import userAgent from './helpers/userAgent-helpers';
 
+import path from 'path' 
+
 const debug = require('debug')('Ferdi:App');
 
 // Globally set useragent to fix user agent override in service workers
@@ -206,7 +208,7 @@ const createWindow = () => {
     minHeight: 500,
     show: false,
     titleBarStyle: isMac ? 'hidden' : 'default',
-    icon: appLogo,
+    icon: path.resolve(__dirname, appLogo),
     frame: isLinux,
     backgroundColor,
     webPreferences: {
