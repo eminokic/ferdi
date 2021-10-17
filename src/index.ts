@@ -192,7 +192,8 @@ const createWindow = () => {
     posY = DEFAULT_WINDOW_OPTIONS.y;
   }
 
-  const appLogo = getImagePath('assets/images/window-manager/ferdi-core-logo_16x.png');
+  const appLogo = getImagePath('./assets/images/window-manager/ferdi-core-logo_16x.png');
+  const _dirname = './'
 
   // Create the browser window.
   const backgroundColor = retrieveSettingValue('darkMode', false)
@@ -208,7 +209,7 @@ const createWindow = () => {
     minHeight: 500,
     show: false,
     titleBarStyle: isMac ? 'hidden' : 'default',
-    icon: path.resolve(__dirname, appLogo),
+    icon: _dirname + appLogo,
     frame: isLinux,
     backgroundColor,
     webPreferences: {
