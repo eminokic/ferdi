@@ -44,8 +44,6 @@ import { asarPath } from './helpers/asar-helpers';
 import { openExternalUrl } from './helpers/url-helpers';
 import userAgent from './helpers/userAgent-helpers';
 
-import path from 'path' 
-
 const debug = require('debug')('Ferdi:App');
 
 // Globally set useragent to fix user agent override in service workers
@@ -192,8 +190,8 @@ const createWindow = () => {
     posY = DEFAULT_WINDOW_OPTIONS.y;
   }
 
-  const appLogo = getImagePath('./assets/images/window-manager/ferdi-core-logo_16x.png');
-  const _dirname = './'
+  // Create App Logo and map image path.
+  const appLogo = getImagePath('assets/images/window-manager/ferdi-core-logo_16x.png');
 
   // Create the browser window.
   const backgroundColor = retrieveSettingValue('darkMode', false)
@@ -209,7 +207,7 @@ const createWindow = () => {
     minHeight: 500,
     show: false,
     titleBarStyle: isMac ? 'hidden' : 'default',
-    icon: _dirname + appLogo,
+    icon: appLogo,
     frame: isLinux,
     backgroundColor,
     webPreferences: {

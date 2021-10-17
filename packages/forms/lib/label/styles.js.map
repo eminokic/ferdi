@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.js","sourceRoot":"","sources":["../../src/label/styles.ts"],"names":[],"mappings":";;AAEA,kBAAe,CAAC,KAAY,EAAE,EAAE,CAAC,CAAC;IAChC,OAAO,EAAE,EAAE;IACX,KAAK,EAAE;QACL,KAAK,EAAE,KAAK,CAAC,UAAU;QACvB,QAAQ,EAAE,KAAK,CAAC,UAAU;KAC3B;IACD,QAAQ,EAAE;QACR,KAAK,EAAE,KAAK,CAAC,WAAW;KACzB;CACF,CAAC,CAAC"}
